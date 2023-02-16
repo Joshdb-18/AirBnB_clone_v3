@@ -9,3 +9,17 @@ from models import storage
 def status():
     """ Returns the status of the request """
     return jsonify({"status": "OK"})
+
+
+@app_views.route('/stats')
+def stats():
+    """
+    endpoint that retrieves the number of each objects by type
+    """
+    objects = {"amenities": storage.count("Amenity"),
+               "cities": storage.count("City"),
+               "places": storage.count("Place"),
+               "reviews": storage.count("Review"),
+               "states": storage.count("State"),
+               "users": sttorage.count("User")}
+    return jsonify(objects)
