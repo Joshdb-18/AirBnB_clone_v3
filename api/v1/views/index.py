@@ -1,4 +1,4 @@
-k#!/usr/bin/python3
+#!/usr/bin/python3
 """This module implement a rule that returns the status of the application"""
 from flask import jsonify
 import models
