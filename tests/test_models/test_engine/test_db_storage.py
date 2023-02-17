@@ -81,6 +81,8 @@ test_db_storage.py'])
 
     def test_classofoutput_get_count_db(self):
         """Test count dbstorage"""
+        stateObj = State(name="GokuState")
+        stateObj.save()
         total = (models.storage.count())
         self.assertEqual(type(total), int)
         totalState = (models.storage.count(State))
